@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us — Editkaro.in</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div class="glow-1"></div>
+  <div class="glow-2"></div>
+  <div class="cursor-light"></div>
+
+  <!-- Header -->
+  <header>
+    <div class="nav-container">
+      <a href="index.html" class="logo">Editkaro<span>.in</span></a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="aboutme.html">About</a>
+        <a href="experience.html">Experience</a>
+        <a href="testimonial.html">Testimonials</a>
+        <a href="ContactUs.html" class="active">Contact</a>
+      </nav>
+      <a href="ContactUs.html" class="contact-btn">Get In Touch</a>
+    </div>
+  </header>
+
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <div class="hero-badge">
+      <i class="fa-solid fa-paper-plane"></i>
+      Let's Work Together
+    </div>
+    <h1>Let's Cut Something <span>Great</span></h1>
+    <p>
+      Tell us about your project and we'll get back to you within 24 hours.
+    </p>
+  </section>
+
+  <!-- Contact Content -->
+  <main class="contact-wrapper">
+
+    <!-- Left: Quick Info Card -->
+    <aside class="about-card contact-info-card">
+      <div class="about-avatar"><i class="fa-solid fa-clapperboard"></i></div>
+      <div class="about-name">Editkaro.in</div>
+      <div class="about-role">Premium Video Editing Studio</div>
+
+      <div class="info-list">
+        <div class="info-item">
+          <i class="fa-solid fa-envelope"></i>
+          <a href="mailto:contact@editkaro.in">contact@editkaro.in</a>
+        </div>
+        <div class="info-item">
+          <i class="fa-brands fa-whatsapp"></i>
+          <a href="https://wa.me/919876XXXX1" target="_blank">+91 9876XXXX1</a>
+        </div>
+        <div class="info-item">
+          <i class="fa-solid fa-clock"></i>
+          <span>Typical reply time: within 24 hours</span>
+        </div>
+        <div class="info-item">
+          <i class="fa-solid fa-briefcase"></i>
+          <span>Available for freelance &amp; collabs</span>
+        </div>
+      </div>
+
+      <div class="social-row">
+        <a href="https://www.instagram.com/editkaro.in/" target="_blank" class="social-icon" aria-label="Instagram">
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+        <a href="https://www.linkedin.com/company/editkaro.in/" target="_blank" class="social-icon" aria-label="LinkedIn">
+          <i class="fa-brands fa-linkedin-in"></i>
+        </a>
+        <a href="mailto:contact@editkaro.in" class="social-icon" aria-label="Email">
+          <i class="fa-solid fa-envelope"></i>
+        </a>
+      </div>
+
+      <div class="form-note">
+        <i class="fa-solid fa-circle-info"></i>
+        Prefer email or WhatsApp? Reach out directly using the details above — or just fill out the form and we'll come to you.
+      </div>
+    </aside>
+
+    <!-- Right: Contact Form -->
+    <section class="about-content contact-form-section">
+      <h2>Start Your Project</h2>
+      <p>Fill in the details below and we'll reach out with next steps and a quote.</p>
+
+      <form id="contactForm" class="contact-form" novalidate>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="name">Full Name <span class="req">*</span></label>
+            <input type="text" id="name" name="name" placeholder="e.g. Priya Sharma" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address <span class="req">*</span></label>
+            <input type="email" id="email" name="email" placeholder="you@example.com" required />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="phone">Phone Number <span class="req">*</span></label>
+            <input type="tel" id="phone" name="phone" placeholder="+91 98765 43210" required />
+          </div>
+          <div class="form-group">
+            <label for="preferredContact">Preferred Contact Method <span class="req">*</span></label>
+            <select id="preferredContact" name="preferredContact" required>
+              <option value="" disabled selected>Choose an option</option>
+              <option value="Email">Email</option>
+              <option value="Phone Call">Phone Call</option>
+              <option value="WhatsApp">WhatsApp</option>
+              <option value="Any">No preference</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="videoType">Type of Video <span class="req">*</span></label>
+          <select id="videoType" name="videoType" required>
+            <option value="" disabled selected>Select video type</option>
+            <option value="Short-Form / Reel">Short-Form / Reel (Under 90s)</option>
+            <option value="Long-Form">Long-Form (YouTube / Documentary)</option>
+            <option value="Animated">Animated / Motion Graphics</option>
+            <option value="Commercial / Ad">Commercial / Ad</option>
+            <option value="Color Grading Only">Color Grading Only</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="description">Describe Your Project <span class="req">*</span></label>
+          <textarea id="description" name="description" rows="4" placeholder="Tell us about the story, style, footage you have, and the goal of the video..." required></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="additionalInfo">Anything Else We Should Know?</label>
+          <textarea id="additionalInfo" name="additionalInfo" rows="3" placeholder="Deadline, reference videos, budget range, music preferences, platforms it will be posted on, etc."></textarea>
+        </div>
+
+        <button type="submit" class="btn-primary submit-btn" id="submitBtn">
+          <i class="fa-solid fa-paper-plane"></i> Send Message
+        </button>
+
+        <div id="formStatus" class="form-status" role="status" aria-live="polite"></div>
+      </form>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-grid">
+
+      <div class="footer-about">
+        <h3>Editkaro<span>.in</span></h3>
+        <p>
+          Professional video editing for brands, creators and businesses.
+          From reels to commercials, we turn ideas into cinematic stories.
+        </p>
+      </div>
+
+      <div class="footer-links">
+        <h4>About</h4>
+        <a href="aboutme.html">About Me</a>
+        <a href="experience.html">Experience</a>
+        <a href="testimonial.html">Testimonials</a>
+      </div>
+
+      <div class="footer-links">
+        <h4>Contact</h4>
+        <a href="mailto:contact@editkaro.in">contact@editkaro.in</a>
+        <a href="https://wa.me/919876XXXX1" target="_blank">+91 9876XXXX1</a>
+        <a href="https://www.instagram.com/editkaro.in/" target="_blank">Instagram</a>
+        <a href="https://www.linkedin.com/company/editkaro.in/" target="_blank">LinkedIn</a>
+      </div>
+
+    </div>
+
+    <p>&copy; 2026 Editkaro.in — Crafted for High-Impact Content Creators &amp; Brands.</p>
+  </footer>
+
+  <script>
+    // Cursor spotlight background effect (matches index.html)
+    const cursorLight = document.querySelector(".cursor-light");
+    document.addEventListener("mousemove", (e) => {
+      cursorLight.style.left = e.clientX + "px";
+      cursorLight.style.top = e.clientY + "px";
+    });
+  </script>
+
+  <!-- Contact form -> Google Sheets integration -->
+  <script src="contact-form.js"></script>
+
+</body>
+</html>

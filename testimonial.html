@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Testimonials — Editkaro.in</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div class="glow-1"></div>
+  <div class="glow-2"></div>
+  <div class="cursor-light"></div>
+
+  <!-- Header -->
+  <header>
+    <div class="nav-container">
+      <a href="index.html" class="logo">Editkaro<span>.in</span></a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="aboutme.html">About</a>
+        <a href="experience.html">Experience</a>
+        <a href="testimonial.html" class="active">Testimonials</a>
+        <a href="ContactUs.html">Contact</a>
+      </nav>
+      <a href="ContactUs.html" class="contact-btn">Get In Touch</a>
+    </div>
+  </header>
+
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <div class="hero-badge">
+      <i class="fa-solid fa-star"></i>
+      Testimonials
+    </div>
+    <h1>Clients Who <span>Loved The Result</span></h1>
+    <p>
+      Two real edits I delivered, and the clients who watched them land — in their own words.
+    </p>
+  </section>
+
+  <!-- Testimonial Cards -->
+  <main class="testimonial-grid" id="testimonialGrid">
+    <!-- Cards injected by JS -->
+  </main>
+
+  <!-- Trust Strip -->
+  <div class="trust-strip">
+    <div class="stat-box">
+      <div class="stat-num">50+</div>
+      <div class="stat-label">Happy Clients</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-num">100+</div>
+      <div class="stat-label">Projects Delivered</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-num">4.7/5</div>
+      <div class="stat-label">Average Client Rating</div>
+    </div>
+  </div>
+
+  <!-- Video Lightbox Modal (same pattern as index.html) -->
+  <div class="modal" id="videoModal">
+    <div class="modal-content">
+      <button class="modal-close" id="modalClose"><i class="fa-solid fa-xmark"></i></button>
+      <div class="video-container">
+        <iframe id="modalIframe" allow="autoplay; encrypted-media" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
+      </div>
+      <div class="modal-details">
+        <div class="card-tag" id="modalTag">Client Testimonial</div>
+        <h3 class="card-title" id="modalTitle">Video Title</h3>
+        <p class="card-desc" id="modalDesc">Video Description</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-grid">
+
+      <div class="footer-about">
+        <h3>Editkaro<span>.in</span></h3>
+        <p>
+          Professional video editing for brands, creators and businesses.
+          From reels to commercials, we turn ideas into cinematic stories.
+        </p>
+      </div>
+
+      <div class="footer-links">
+        <h4>About</h4>
+        <a href="aboutme.html">About Me</a>
+        <a href="experience.html">Experience</a>
+        <a href="testimonial.html">Testimonials</a>
+      </div>
+
+      <div class="footer-links">
+        <h4>Contact</h4>
+        <a href="mailto:contact@editkaro.in">contact@editkaro.in</a>
+        <a href="https://wa.me/919876XXXX1" target="_blank">+91 9876XXXX1</a>
+        <a href="https://www.instagram.com/editkaro.in/" target="_blank">Instagram</a>
+        <a href="https://www.linkedin.com/company/editkaro.in/" target="_blank">LinkedIn</a>
+      </div>
+
+    </div>
+
+    <p>&copy; 2026 Editkaro.in — Crafted for High-Impact Content Creators &amp; Brands.</p>
+  </footer>
+
+  <script>
+    // Testimonial Data — 2 short video edits delivered to clients who were satisfied
+    // Replace thumbnail/videoEmbed with your actual reel links when ready.
+    const testimonialData = [
+      {
+        id: "t1",
+        title: "Reel Revamp for a Fitness Creator",
+        description: "A fast-paced Instagram Reel edit with beat-synced cuts and motion graphics, delivered for a fitness creator's brand launch.",
+        category: "Short-Form Reel",
+        thumbnail: "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=500&q=80",
+        videoEmbed: "https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&mute=1",
+        quote: "The turnaround was fast and the pacing felt exactly like what I see from the top creators in my niche. Engagement on that reel was easily double our usual average.",
+        clientName: "Aditi Sharma",
+        clientRole: "Fitness Creator, 120K followers",
+        result: "2x engagement vs. average post"
+      },
+      {
+        id: "t2",
+        title: "Product Ad Cut for a D2C Brand",
+        description: "A conversion-focused eCommerce ad edit with clean product callouts and macro shots for a direct-to-consumer skincare brand.",
+        category: "eCommerce Ad",
+        thumbnail: "https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=500&q=80",
+        videoEmbed: "https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&mute=1",
+        quote: "We handed over raw phone footage and got back an ad that looked like it belonged on a billboard. It became our best-performing creative that quarter.",
+        clientName: "John Doe",
+        clientRole: "Founder, Curlogy Skincare Brand",
+        result: "One of the Best-performing ad of the quarter"
+      }
+    ];
+
+    const testimonialGrid = document.getElementById('testimonialGrid');
+    const modal = document.getElementById('videoModal');
+    const modalClose = document.getElementById('modalClose');
+    const modalIframe = document.getElementById('modalIframe');
+    const modalTag = document.getElementById('modalTag');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalDesc = document.getElementById('modalDesc');
+    const cursorLight = document.querySelector(".cursor-light");
+
+    function initials(name) {
+      return name.split(' ').map(n => n[0]).join('').slice(0, 2).toUpperCase();
+    }
+
+    function renderTestimonials(items) {
+      testimonialGrid.innerHTML = '';
+      items.forEach(item => {
+        const card = document.createElement('div');
+        card.className = 'testimonial-card';
+
+        card.innerHTML = `
+          <div class="testimonial-reel">
+            <div class="phone-frame">
+              <img src="${item.thumbnail}" alt="${item.title}" loading="lazy" />
+              <div class="play-overlay">
+                <div class="play-icon"><i class="fa-solid fa-play"></i></div>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-body">
+            <div class="stars">★★★★★</div>
+            <p class="quote-text">"${item.quote}"</p>
+            <div class="client-row">
+              <div class="client-avatar">${initials(item.clientName)}</div>
+              <div>
+                <div class="client-name">${item.clientName}</div>
+                <div class="client-role">${item.clientRole}</div>
+              </div>
+            </div>
+            <div class="result-badge"><i class="fa-solid fa-arrow-trend-up"></i> ${item.result}</div>
+          </div>
+        `;
+
+        card.querySelector('.phone-frame').addEventListener('click', () => openModal(item));
+        testimonialGrid.appendChild(card);
+      });
+    }
+
+    function openModal(item) {
+      modalIframe.src = item.videoEmbed;
+      modalTag.textContent = item.category;
+      modalTitle.textContent = item.title;
+      modalDesc.textContent = item.description;
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+      modal.classList.remove('active');
+      modalIframe.src = '';
+      document.body.style.overflow = 'auto';
+    }
+
+    modalClose.addEventListener('click', closeModal);
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) closeModal();
+    });
+
+    // Cursor spotlight background effect (matches index.html)
+    document.addEventListener("mousemove", (e) => {
+      cursorLight.style.left = e.clientX + "px";
+      cursorLight.style.top = e.clientY + "px";
+    });
+
+    renderTestimonials(testimonialData);
+  </script>
+
+</body>
+</html>
