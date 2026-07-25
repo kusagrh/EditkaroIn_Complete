@@ -1,17 +1,4 @@
-/* ==========================================================================
-   Editkaro.in — Contact Form → Google Sheets Integration
-   ==========================================================================
-   HOW THIS WORKS
-   1. This form POSTs the submitted data to a Google Apps Script "Web App".
-   2. The Apps Script (see google-apps-script.gs in this folder) receives the
-      data and appends it as a new row in a Google Sheet.
-   3. You MUST deploy that script yourself and paste the resulting Web App
-      URL below in SCRIPT_URL. Full step-by-step instructions are in
-      README-contact-form-setup.md.
-   ========================================================================== */
-
-// 👉 STEP: Paste your deployed Google Apps Script Web App URL here.
-const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbz2TS6NDbVJ05mMfDsTaUJSLGojqx2HepXidvt6YccYWXlozXdE9uVOeTQqV4UigYE/exec";
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxTcWLtK-uLZ49MYQg8P7Mrdc6twa0OEyCsLrcXYscRyqBF3ccQlGJEFW7MN5ONt9e_/exec";
 
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("contactForm");
@@ -44,7 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!SCRIPT_URL || SCRIPT_URL.includes("PASTE_YOUR")) {
       showStatus(
         "error",
-        "Form isn't connected to Google Sheets yet — set SCRIPT_URL in contact-form.js (see README-contact-form-setup.md)."
+        "Form isn't connected to Google Sheets yet — set SCRIPT_URL in contact-form.js"
       );
       return;
     }
@@ -53,9 +40,6 @@ document.addEventListener("DOMContentLoaded", () => {
     showStatus("loading", "Sending your message...");
 
     try {
-      // NOTE: Content-Type "text/plain" avoids a CORS preflight (OPTIONS)
-      // request, which Google Apps Script Web Apps do not handle. The
-      // Apps Script still receives this as JSON in e.postData.contents.
       const response = await fetch(SCRIPT_URL, {
         method: "POST",
         headers: { "Content-Type": "text/plain;charset=utf-8" },
